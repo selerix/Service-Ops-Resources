@@ -9,7 +9,9 @@
 > SFTP procedures  
 > Enrollment rules standards 
 > dependency rules
+> value lists ex : tier enumeration, ReasonType subclass   
 
+-Code section - Scripts >> Reports && Enrollment  
+-Code section - HTML >> Emails && TextBanks  
 
--Code section - Scripts >> Reports && Enrollment
--Code section - HTML >> Emails && TextBanks
+While building repo/wiki folder to submit ideas, general knowledge, how to's that can be formatted  
