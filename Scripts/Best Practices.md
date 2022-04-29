@@ -1,5 +1,5 @@
 # Best Practices
-
+---------------------------------------------------------------------------------------------  
 **-Please only add script to your case when it is necessary.**  
 **-If there is a setting available, please use first prior to adding code to your case.**  
 **-Do not script using any hardcoded IDs from your case (i.e. Payer IDs, Product IDs, etc.).**  
