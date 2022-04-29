@@ -1,12 +1,14 @@
 # Best Practices  
 
+
 **-Please only add script to your case when it is necessary.**  
 **-If there is a setting available, please use first prior to adding code to your case.**  
 **-Do not script using any hardcoded IDs from your case (i.e. Payer IDs, Product IDs, etc.).**  
 **-If you are copying a script from an existing case, still add your name and the date  
 the script was added to the new case, but also include the case the script was copied from  
 and who originally wrote it.**  
----------------------------------------------------------------------------------------------  
+
+
 ### What to include?
 
 When moving or utilizing scripts make sure to include the following comments in your script to ensure readability and to make future troubleshooting easier.
