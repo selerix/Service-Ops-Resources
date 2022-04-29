@@ -13,11 +13,11 @@ and who originally wrote it.**
 
 When moving or utilizing scripts make sure to include the following comments in your script to ensure readability and to make future troubleshooting easier.
 
-> Where the script is located (i.e. OnLoad, OnEligible)
-> What rate groups the script applies to (i.e. All Rate Groups or name the specific ones)
-> Plan year this script was added for and if it would be available for All Plan Years
-> What the script is doing
-> Who wrote script including the date it was written
+> Where the script is located (i.e. OnLoad, OnEligible)  
+> What rate groups the script applies to (i.e. All Rate Groups or name the specific ones)  
+> Plan year this script was added for and if it would be available for All Plan Years  
+> What the script is doing  
+> Who wrote script including the date it was written  
 
 #### Example:
 
