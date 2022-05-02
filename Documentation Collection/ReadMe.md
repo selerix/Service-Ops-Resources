@@ -1,4 +1,4 @@
-Please upload files to the Document Collection folder in the <>Code section of the repository. These files will be added to the Scripts folder under <>Code or into the respective Wiki page for documentation. <>Code section and Wiki will be built out based on information provided, the more we have the better off we will be. Please follow the below instructions to upload any script or how to documentation.
+Please upload files to the Document Collection folder in the <>Code section of the repository. These files will be added to the Scripts folder under <>Code or into the respective Wiki page for documentation. <>Code section and Wiki will be built out based on information provided, the more we have the better off we will be. Please follow the below instructions to upload any script or how to documentation. 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
