@@ -3,7 +3,7 @@ Please upload files to the Document Collection folder in the <>Code section of t
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   
   
-Navigate to Documentaion Collection and use the Add File drop down to see the option for uploading documents  
+Navigate to Documentaion Collection (should be same folder as the location of this ReadMe) and use the Add File drop down to see the option for uploading documents  
 
 ![image](https://user-images.githubusercontent.com/104641514/166310362-db95f9a8-aeb9-4919-8c7f-16f471b81d24.png)
 
