@@ -1,0 +1,16 @@
+need to edit, spouse and child count script can be used with single row reporting
+
+if (Event.FirstEmployeeRecord)
+{
+    Event.Globals.Clear();
+    Event.Globals["ChildCount"] = 1;
+}
+if (Event.Record["DependentRelationshipID"] == "1" || Event.Record["DependentRelationshipID"] == "4")
+{
+    Event.Globals["Spouse"] = Event.Record;
+}
+if (Event.Record["DependentRelationshipID"] == "2")
+{
+    Event.Globals["Child" + "_" + Event.Globals["ChildCount"]] = Event.Record;
+    Event.Globals["ChildCount"]++;
+}
