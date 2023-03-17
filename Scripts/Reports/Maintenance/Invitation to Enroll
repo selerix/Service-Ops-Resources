@@ -1,0 +1,84 @@
+Here is an exampple of an HTML invitaion to enroll with code or jscript islands
+
+<<%
+    // CONTENTLIB_WELCOME_ELIGIBLE
+    //
+    // Welcome message (landing page) displayed to an eligible employee who logs
+    // onto the enrollment site during the open enrollment period.
+    //
+    // See CONTENTLIB_WELCOME.
+var planYearTemplate = "{0}-{1}";
+
+if (Event.Case.PlanYearStartDate.Month == 1)
+    planYearTemplate = "{0}";
+Event.Debug("CONTENTLIB_WELCOME_ELIGIBLE: '{0}' planYrStart:{1:MM/dd/yyyy}", Event.Case.Description, Event.Case.PlanYearStartDate);
+%><span style="font-size:20px"><span style="font-family:arial,helvetica,sans-serif">[two-third] Welcome to Your Benefit Enrollment</span></span><br />
+<span style="font-size:14px">Dear <%=Event.Employee.EmployeePerson.FirstName%>,</span><br />
+&nbsp;
+<p>&nbsp;</p>
+<span style="font-size:14px"> <%
+var age:int = Event.Employee.EmployeePerson.Age(DateTime.Today); 
+Event.Debug("EEage"+age);
+
+if(age >= 15 && age <=29)
+{ %>[CONTENTLIB_WELCOME_HRT_15-29_DISABILITY] <%}
+else if(age >= 29 && age <=99)
+{ %></span>
+
+<%
+if (Event.Employee){
+    var grace = 90;
+    var grace2 = 31;
+    var wait = 30;
+    
+    var elig = new DateTime(Event.Employee.EligibilityDate);
+    
+    var eligWait = elig.AddDays(wait);
+    
+    var enrollBy = eligWait.AddDays(grace);
+    var enrollBy2 = eligWait.AddDays(grace2);
+}
+%>
+
+<p>
+    <span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif; font-size:14px"><%=Event.Case.Employer.Name%> is offering&nbsp;you employee benefits&nbsp;insurance from The Hartford to help ensure that if the unexpected happened, you can help protect what you&rsquo;ve taken a lifetime to build.</span></span><br />
+&nbsp;
+</p>
+<span style="font-size:14px"> 
+<%
+}
+%> 
+<strong>Customer&#39;s Viewpoint</strong>
+<br />
+<img alt="" src="https://enroll.thehartfordatwork.com/enroll/presentation/1300/homepage_testimonial.gif" style="height:100px; width:580px" /><br />
+<img alt="" src="https://enroll.thehartfordatwork.com/enroll/presentation/1316/homepage_testimonial_francine.gif" style="height:100px; width:580px" /><br />
+
+<%
+if ((DateTime.Now <= Event.Case.LatestActivePlanYearEndOpenEnrollment) && (DateTime.Now <= Event.Case.EndOpenEnrollment)){
+%>    
+    <span style="font-size:14px"><strong>Be sure to sign up for coverage by <%=Event.Case.EndOpenEnrollment.ToLocalTime().ToShortDateString()%>.</strong><br />
+<%
+} else if (Event.Employee && (Event.Employee.HasEvent('Added', grace) || Event.Employee.HasEvent('EligibilityDateChange', grace)) && (DateTime.Now <= enrollBy || DateTime.Now <= enrollBy2)){
+%>
+    <span style="font-size:14px"><strong>Be sure to sign up for coverage by <%=enrollBy.ToShortDateString()%>.<br>Please be aware you must sign up for some plans by <%=enrollBy2.ToShortDateString()%>.</strong></span><strong>&nbsp;&nbsp;</strong><br />
+<%
+}
+%>
+<br></span>
+<p><span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif">For questions, contact your benefits administrator&nbsp;Human&nbsp;Resources at 215.751.2491.</span></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif">The enrollment process will guide you through:<br />
+&bull; Verifying your information and dependents</span></span></p>
+
+<p><span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif">&bull; Selecting your coverage</span></span></p>
+
+<p><span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif">&bull; Signing and submitting</span></span><br />
+&nbsp;</p>
+
+<p><span style="font-family:arial,helvetica,sans-serif">To complete the enrollment you&nbsp;may need the Social Security Number&nbsp;of your dependents. Your Password, used at login, may also be required to submit your elections at the end of this enrollment process.</span><br />
+&nbsp;</p>
+
+<p><span style="font-size:14px"><span style="font-family:arial,helvetica,sans-serif">Click Next to review personal information and begin enrollment.&nbsp;</span></span></p>
+[/two-third] [one-third last] [CONTENTLIB_ELIGIBLE_PLANS] [/one-third]
