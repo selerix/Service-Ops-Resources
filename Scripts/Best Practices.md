@@ -61,8 +61,7 @@ When moving or utilizing scripts make sure to include the following comments in 
 8. Declarations should NEVER be conditional.
     if (Event.PayrollCompany.Name == "Payroll Dept.")
         var hsaOpt = "EO";
-    ...
-    
+        
     Define variables in the scope in which they're used.
 
 9. Watch your indentation. Use indentation to show branches and loops in the code.
