@@ -1,13 +1,11 @@
 The purpose of this library is to store example scripts for various logic needed at the Plan level.
 
-	• Pages are broken out by most common location for script
-	• Script is broken out further using tags like #thescript
-
 DISCLAIMER: This is meant to be a reference tool, and not the final product of your logic. Copying and pasting these scripts without modification and testing will result in, at very least, broken logic and unrealized dreams.
 
 --------------------------------------------------------------------------------------------------------------
 
 Following is a list of the possible tags:
+
 	• #age
 	• #answer
 	• #application
