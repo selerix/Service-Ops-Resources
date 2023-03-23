@@ -1,0 +1,13 @@
+var medApp = Event.Applications["Medical"];
+
+if (medApp && !medApp.Waived && medApp.PayerProduct) 
+{
+  if (medApp.PayerProduct.XMLTagName == "_2500DeductiblePlan") 
+  {
+      Event.Engine.RateGroup = "2500 Deduction";
+  }
+  else if (medApp.PayerProduct.XMLTagName == "_1500DeductiblePlan") 
+  {
+     Event.Engine.RateGroup = "1500 Deduction"; 
+  }
+}
