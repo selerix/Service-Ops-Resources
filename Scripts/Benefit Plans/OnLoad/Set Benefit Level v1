@@ -1,0 +1,14 @@
+if (Event.Application && Event.Application.ApplicationDate == null)
+{
+    var epID = Event.Employee.EmployeePerson.PersonID;
+    var eT1 = Event.GetAnswer(epID, 'FLORIDABLUE_TOBACCO_QUESTION_1');
+    var eT2 = Event.GetAnswer(epID, 'FLORIDABLUE_TOBACCO_QUESTION_2');
+   
+    if (eT1 == 'True' || eT2 == 'True')
+    {
+        Event.Application.DeductionOptionCode = "T";//set smoker rate
+    }
+    else {
+        Event.Application.DeductionOptionCode = "NT";//set non-smoker rate
+    }
+}
