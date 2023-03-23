@@ -1,0 +1,10 @@
+var dedCustom = Event.Employee.GetCustom("2022 Deduction Frequency");
+
+if(dedCustom && dedCustom == "12")
+{
+    Event.Config.DefaultDeductionFrequency = 12;
+}
+else if(dedCustom && dedCustom == "10")
+{
+    Event.Config.DefaultDeductionFrequency = 10;
+}
