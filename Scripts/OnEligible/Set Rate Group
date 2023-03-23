@@ -1,0 +1,11 @@
+var wellness = Event.Employee.GetCustom('Wellness');
+var jobClass = Event.Employee.JobClass.Description;
+
+if (wellness && wellness == true && jobClass == "Owners")
+{
+    Event.Engine.RateGroup = 'Owners - Wellness';
+}
+else if (wellness && wellness == false && jobClass == "Owners")
+{
+    Event.Engine.RateGroup = 'Owners - Non-Wellness';
+}
