@@ -9,4 +9,3 @@ else if (wellness && wellness == false && jobClass == "Owners")
 {
     Event.Engine.RateGroup = 'Owners - Non-Wellness';
 }
-;
