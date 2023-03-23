@@ -1,0 +1,11 @@
+if(Event.LastCoverage)
+{
+    if(Event.LastCoverage.PayerProduct.XMLTagName != "OutPocketMax10002000")
+    {
+        Event.Value = (Event.Product.XMLTagName != "OutPocketMax10002000") 
+    }        
+}
+else
+{
+    Event.Value = (Event.Product.XMLTagName != "OutPocketMax10002000")
+}
