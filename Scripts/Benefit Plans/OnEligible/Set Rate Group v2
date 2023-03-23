@@ -1,0 +1,16 @@
+if(!(Event.Employee.HasChildren()))
+{
+    Event.Engine.RateGroup = "EO Coverage";
+}
+else
+{
+    Event.Engine.RateGroup = "Default";
+}
+if(!(Event.Employee.HasSpouse()))
+{
+    Event.Engine.RateGroup = "EO Coverage";
+}
+else
+{
+    Event.Engine.RateGroup = "Default";
+}
