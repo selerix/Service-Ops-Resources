@@ -1,0 +1,9 @@
+var EEloc = Event.Employee.Location.Description;
+
+if(EEloc == "Admin" || EEloc == "Warehouse" || EEloc == "Office")
+{
+	var OeStart:DateTime = DateTime.Parse("3/1/2022");
+	var OeEnd:DateTime = DateTime.Parse("3/9/2022");
+	Event.Config.SpecialEnrollmentStart = OeStart;
+	Event.Config.SpecialEnrollmentEnd = OeEnd;
+}
