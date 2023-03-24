@@ -1,0 +1,9 @@
+var appMedical = Event.Applications["Medical"];
+ 
+if (appMedical != null && !appMedical.Waived && appMedical.ApplicationDate != null)
+{
+    if (appMedical.CoverageTypeID == 'EmployeeOnly')
+        Event.Application.DeductionOptionCode = 'EO';
+    else
+        Event.Application.DeductionOptionCode = 'FA';
+}
