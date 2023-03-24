@@ -1,0 +1,10 @@
+#### OnSave
+
+var ID = Event.Employee.EmployeePerson.PersonID;
+var answer = Event.GetAnswer(ID, "Health_Coverage_Outside");
+if(answer)
+    Event.Engine.Properties["Answer"] = answer;
+
+#### Other plan, OnLoad
+
+var answer = Event.Engine.Properties["Answer"];
