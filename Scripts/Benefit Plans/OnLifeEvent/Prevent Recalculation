@@ -1,0 +1,11 @@
+if(Event.Action.EventType == Selerix.Foundation.EventSubClass.SalaryChanged)
+{
+    var length = Event.Employee.EmployeeLocations.Count
+    var latestSalary = Event.Employee.EmployeeLocations[length-1].Salary
+    var previousSalary = Event.Employee.EmployeeLocations[length-2].Salary
+    
+    if(latestSalary > previousSalary)
+    {
+        Event.Action.Recalculate = false;
+    }    
+}
