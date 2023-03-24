@@ -1,0 +1,16 @@
+var answer = Event.GetAnswer(Event.Employee.EmployeePerson, "Medical_Other_Plans");
+var answer2 = Event.GetAnswer(Event.Employee.EmployeePerson, "Medical_Dependent_Coverage");
+var answer3 = Event.GetAnswer(Event.Employee.EmployeePerson, "Medical_Medicaid_Medicare_Coverage");
+
+if (answer && answer == "True")
+{
+    Event.Employee.SaveCustom("Declined Medical Reason", "Another plan");
+}
+else if (answer2 && answer2 == "True")
+{
+    Event.Employee.SaveCustom("Declined Medical Reason", "Dependent of plan");
+}
+else if (answer3 && answer3 == "True")
+{
+    Event.Employee.SaveCustom("Declined Medical Reason", "Covered by Medicaid/Medicare");
+}
