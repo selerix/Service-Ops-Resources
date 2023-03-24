@@ -1,0 +1,4 @@
+if(Event.Employee.EmployeePerson.Age(Event.AgeBaseDate) >= 70)
+{
+    Event.Config.MaxBenefitAmount = 50000;
+}
