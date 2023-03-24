@@ -1,0 +1,8 @@
+for(var i = 0; i <= 50; i++)
+{
+  if(Event.Fields['Plan.' + i] == "Long Term Disability")
+  {
+    Event.Fields['Product.' + i] = Event.Fields["Employee.EmployeeInsured.CoverageArray.LongTermDisability.DeductionOptionCode'];
+  }
+}
+    
