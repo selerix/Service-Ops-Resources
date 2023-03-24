@@ -1,0 +1,9 @@
+var medApp = Event.Applications["Medical"];
+
+ if (medApp != null && !medApp.Waived && medApp.ApplicationDate != null)
+ {
+     if (medApp.CoverageTypeID != 4 && Event.Application.CoverageTypeID)
+     {
+         Event.Application.CoverageTypeID = 7;
+     }
+ }
