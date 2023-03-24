@@ -1,0 +1,22 @@
+if(Event.Employee && Event.Engine)
+{
+    for(var eeEvent in Event.Employee.EmployeeEvents) 
+    {
+        if(eeEvent.EventType == "Rehire" 
+        && eeEvent.EventDate.AddDays(Event.Config.GracePeriod) >= DateTime.Today) 
+       {
+            for(var eeTerm in Event.Employee.EmployeeEvents) 
+            {
+                if(eeTerm.EventType.ToString().Contains("Terminated")
+                && eeTerm.EventDate >= eeEvent.EventDate.AddMonths(-6)) 
+                {
+                    Event.Debug("Term date within 6 months | Term Date: {0} | Rehire Date: {1} ", eeTerm.EventDate, eeEvent.EventDate)
+                    Event.Config.WaitingPeriod = 0;
+                    Event.Config.ForceLateEntry = false;
+                    Event.Config.EffectiveDateCalc = 0
+                    break;
+                }
+            }
+        }
+    }
+}
