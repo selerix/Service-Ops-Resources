@@ -1,0 +1,20 @@
+var now = DateTime.Now;
+if(Event.PlanYear && Event.PlanYear.StartEnrollment <= now && Event.PlanYear.EndOpenEnrollment >= now)
+{
+    var currentCoverage = Event.LastCoverage;
+    var hireDate = Event.Employee.DateOfHire;
+    var gracePeriod = Event.Config.GracePeriod;
+    var isNewHire = hireDate.AddDays(gracePeriod) > now;
+
+    if(isNewHire)
+    {
+          if(currentCoverage)
+          {
+              Event.Config.EnrollThroughDate = now.AddDays(- 1);
+          }
+    }
+    else
+    {
+          Event.Config.EnrollThroughDate = now.AddDays(- 1);
+    }
+}
