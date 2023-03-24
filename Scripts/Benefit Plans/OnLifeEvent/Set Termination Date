@@ -1,0 +1,9 @@
+if (Event.EventType == 'Terminated' && Event.Employee.TerminationDate != null)
+{
+  var termDt = Event.Employee.TerminationDate;
+  var covTermDate = termDt.AddMonths(1);
+
+  covTermDate = new DateTime(covTermDate.Year, covTermDate.Month, '1');
+  covTermDate = covTermDate.AddDays(-1);
+  Event.Action.TerminationDate = covTermDate;
+}
