@@ -1,0 +1,11 @@
+var hireDate : DateTime = Event.Employee.DateOfHire;
+
+if (Event.Employee.EligibilityDate != null && Event.Employee.EligibilityDate > hireDate)
+{
+	hireDate = Event.Employee.EligibilityDate;
+}
+if (!Event.LastCoverage && hireDate.AddDays(Event.Config.GracePeriod) < DateTime.Today) //if they are a late entrant
+{
+	Event.Config.SetGILimit(10000);
+	Event.Config.IncreaseNotAllowedRule = false;
+}
