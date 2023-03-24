@@ -1,0 +1,4 @@
+if(Event.EventType && Event.EventType == "Rehire")
+{
+    Event.Employee.SaveCustom("Wellness", "0")
+}
