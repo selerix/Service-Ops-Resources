@@ -1,0 +1,5 @@
+//OnSave
+if (Event.Application && !Event.Application.Waived)
+{
+    Event.Application.SetApplicationProperty('medWaived', 'not waived');
+}
