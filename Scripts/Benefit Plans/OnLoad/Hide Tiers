@@ -1,0 +1,20 @@
+for (var payerProd in Event.Config.PayerProducts)
+{
+    if (payerProd != null)
+    {
+        var prod = Event.Config.GetPayerProductInfo(payerProd.PayerProductID);
+        if (prod)
+        {
+            if (Event.Employee.SpousePerson && Event.Employee.SpousePerson.IsEmployee(DateTime.Now))
+            {                
+                prod.SetEERate(7, 0, 0, 0); //FA to zero
+                prod.SetERRate(7, 0, 0, 0); //FA to zero
+            }
+            else
+            {
+                prod.SetEERate(15, 0, 0, 0); //DualFamily to zero
+                prod.SetERRate(15, 0, 0, 0); //DualFamily to zero
+            }
+        }        
+    }
+}
