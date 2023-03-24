@@ -1,0 +1,4 @@
+if(Event.CurrentPerson && Event.CurrentPerson.RelationshipDescriptionID == "Stepchild")
+{
+    Event.Value = false;
+}
