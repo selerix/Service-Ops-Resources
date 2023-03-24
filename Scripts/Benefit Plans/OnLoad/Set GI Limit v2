@@ -1,0 +1,17 @@
+var ageBand = Event.Engine.CalcAgeBand(Event.Employee.EmployeePerson, 0, Event.AgeBaseDate);
+var giLimit = Event.Config.GetGILimit(0, ageBand);
+var eeSalary = (Event.Engine.EmployeeSalary * 3);
+
+// Event.Debug("----giLimit===="+Event.Config.GetGILimit(0, Event.Engine.CalcAgeBand(Event.Employee.EmployeePerson, 0, Event.AgeBaseDate)));
+// Event.Debug("----eeSalarytimes3===="+eeSalary);
+
+if(Event.Application && eeSalary && eeSalary != null)
+{
+    // Event.Debug("-------passed null check------");
+    if(giLimit > eeSalary)
+    {
+        // Event.Debug("---------giLimit is greater than salary, set gi to salary---------");
+        Event.Config.SetGILimit(Event.Engine.EmployeeSalary * 3);
+        Event.Config.IncreaseNotAllowedRule = false;
+    }
+}
