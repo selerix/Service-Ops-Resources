@@ -1,0 +1,20 @@
+
+for (var ev in Event.Employee.EmployeeEvents)
+{
+    if (ev.Reason
+        && ev.EventDate >= DateTime.Today
+        && (ev.Reason.Contains("Wellness changed from 0 to 1")
+        || ev.Reason.Contains("Wellness added with value 1")))
+    {
+        for (var covg in Event.Employee.LatestCoverages())
+        {
+            if (covg.CaseProduct.XMLTagName == "Medical" && (!covg.TerminationDate
+                || (covg.TerminationDate && covg.TerminationDate > Event.Action.EffectiveDate)))
+            {
+                Event.Action.Recalculate = true;
+                Event.Action.EffectiveDate = covg.EffectiveDate;
+                break;
+            }
+        }
+    }
+}
