@@ -9,4 +9,3 @@ if (!Event.LastCoverage && hireDate.AddDays(Event.Config.GracePeriod) < DateTime
 	Event.Config.SetGILimit(10000);
 	Event.Config.IncreaseNotAllowedRule = false;
 }
-;
