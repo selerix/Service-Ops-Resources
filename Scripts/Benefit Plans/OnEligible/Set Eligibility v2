@@ -1,3 +1,0 @@
-var courtCustom = Event.Employee.GetCustom ("Court Ordered")
-
-Event.Value = (courtCustom == "1")? true : false;
