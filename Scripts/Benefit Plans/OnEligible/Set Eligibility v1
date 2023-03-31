@@ -2,5 +2,5 @@ var eligCustom = Event.Employee.GetCustom("Eligible");
 
 if(eligCustom == "0")
 {
-  Event.Value = false;
+    Event.Value = false;
 }
