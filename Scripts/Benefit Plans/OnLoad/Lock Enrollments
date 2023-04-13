@@ -10,11 +10,11 @@ if(Event.PlanYear && Event.PlanYear.StartEnrollment <= now && Event.PlanYear.End
     {
           if(currentCoverage)
           {
-              Event.Config.EnrollThroughDate = now.AddDays(- 1);
+              Event.Config.EnrollThroughDate = now.AddDays(-1);
           }
     }
     else
     {
-          Event.Config.EnrollThroughDate = now.AddDays(- 1);
+          Event.Config.EnrollThroughDate = now.AddDays(-1);
     }
 }
